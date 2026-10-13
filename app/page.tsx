@@ -55,7 +55,7 @@ export default function Home() {
           <Suspense fallback={
             <div className="col-span-full flex flex-col items-center justify-center py-24 text-teal-400/70 font-mono animate-pulse">
               <Loader2 className="h-10 w-10 mb-4 animate-spin" />
-              <span>Fetching data from server...</span>
+              <span>Fetching Data from server...</span>
             </div>
           }>
             <PortfolioContent />

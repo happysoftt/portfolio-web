@@ -1,7 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // สั่งให้ข้ามการจับผิด Type และ ESLint ตอนเอาเว็บขึ้น Vercel
+  /* config options here */
+  experimental: {
+    agentFeedback: true,
+  },
+  cacheComponents: true,
+  partialPrefetching: true,
+  turbopack: {
+    rules: {
+      "*.css": {
+        loaders: ["@tailwindcss/turbopack"],
+        as: "*.css",
+      },
+    },
+  },
+  // เพิ่มการข้าม Error ของ Type และ ESLint ไว้ตรงนี้ จะได้เอาขึ้น Vercel ได้
   typescript: {
     ignoreBuildErrors: true,
   },
